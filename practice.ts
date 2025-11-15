@@ -1,4 +1,3 @@
-
 // const createArrayWithGeneric = <T>(value: T) => {
 //     return [value]
 // }
@@ -11,17 +10,14 @@
 //     name: "next level"
 // })
 
-// const createArrayWithTuple = (param: string, param2: number) => 
+// const createArrayWithTuple = (param: string, param2: number) =>
 //     [param,
 //     param2,]
-
 
 //     const createArrayWithTupleGeneric = <X, Y>(param: X, param2: Y) => [param, param2]
 
 //     const res1 = createArrayWithTupleGeneric<string, number>('hh', 11)
 //     const res2 = createArrayWithTupleGeneric<string, number>('hh', 11)
-
-
 
 // GENERIC FUNCTION
 
@@ -45,17 +41,20 @@
 //         isMarried: true
 //     }
 
-
 //     const resutl = addCourseStudent<typeof student1>(student1)
 
 //     console.log(resutl)
 
-
-
 // GENERIC FUNCTION IMPROVED VERSION
 
-const addCourseStudent = <T extends object>(studentInfo: T):
-T & { course: string } => {
+type Student = {
+  id: number;
+  name: string;
+};
+
+const addCourseStudent = <T extends Student>(
+  studentInfo: T
+): T & { course: string } => {
   return {
     course: "Next Level",
     ...studentInfo,
@@ -68,6 +67,10 @@ const student1 = {
   haspen: true,
 };
 
-const resutl = addCourseStudent<typeof student1>(student1)
+const student3 = {
+  hasWatch: true,
+};
+
+const resutl = addCourseStudent(student1);
 
 console.log(resutl);
