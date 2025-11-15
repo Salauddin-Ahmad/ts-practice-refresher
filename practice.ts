@@ -71,6 +71,6 @@ const student3 = {
   hasWatch: true,
 };
 
-const resutl = addCourseStudent(student1);
+const resutl = addCourseStudent(student3);
 
 console.log(resutl);
