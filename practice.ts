@@ -52,9 +52,7 @@ type Student = {
   name: string;
 };
 
-const addCourseStudent = <T extends Student>(
-  studentInfo: T
-): T & { course: string } => {
+const addCourseStudent = <T extends Student>(studentInfo: T): T & { course: string } => {
   return {
     course: "Next Level",
     ...studentInfo,
